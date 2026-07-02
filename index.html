@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Circuit Log — Science Experiments for Curious Kids</title>
+<meta name="description" content="Free, hands-on science experiment tutorials filmed and taught by a student, for kids who want to try real STEM at home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>The Circuit Log</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#how">How It Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Student-run · free STEM tutorials</div>
+      <h1>Real science experiments, <em>filmed and taught</em> for any kid who wants to try.</h1>
+      <p class="lede">I build, film, and break down hands-on STEM experiments — from simple electricity contraptions to chemistry demos — so any curious kid has a clear tutorial to follow, free of charge.</p>
+      <div class="hero-ctas">
+        <a href="#experiments" class="btn btn-primary">Watch the experiments</a>
+        <a href="#contact" class="btn btn-ghost">Visit the YouTube channel</a>
+      </div>
+    </div>
+    <div class="circuit-wrap">
+      <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated circuit diagram connecting a battery, switch, and lightbulb">
+        <path class="circuit-wire" d="M60,80 H150 V150 H320" />
+        <path class="circuit-wire" d="M60,80 V220 H320 V150" />
+        <path class="circuit-pulse" d="M60,80 H150 V150 H320 V150 H60 V80" />
+        <rect class="circuit-node on" x="40" y="60" width="40" height="40" rx="3"/>
+        <text class="circuit-label" x="40" y="115">battery</text>
+        <circle class="circuit-node" cx="150" cy="150" r="16"/>
+        <text class="circuit-label" x="128" y="180">switch</text>
+        <g class="bulb-glow">
+          <circle class="circuit-node on" cx="320" cy="150" r="22"/>
+        </g>
+        <text class="circuit-label" x="292" y="190">bulb</text>
+        <circle class="circuit-node" cx="320" cy="220" r="10"/>
+        <text class="circuit-label" x="295" y="248">contraption</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The project</div>
+        <h2>Science shouldn't need a lab to be real</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>The Circuit Log started as a way to combine two things I care about: building things with my hands, and making STEM feel approachable instead of intimidating. Every experiment on this site is one I've built, tested, and filmed myself — usually more than once, until it actually works the way it's supposed to.</p>
+          <p>The goal is simple: give kids who are curious about science a real, working tutorial they can follow using materials they likely already have at home. No paywall, no kit to buy — just a clear walkthrough and the reasoning behind why each experiment works.</p>
+          <p>Each entry starts here with the basics — what it is, how long it takes, what you'll need. Click into any experiment for the full video, the deep scientific breakdown, and complete safety information.</p>
+        </div>
+        <div>
+          <div class="stat-card">
+            <div class="num">100% free</div>
+            <div class="label">No cost to view or follow along</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">Filmed at home</div>
+            <div class="label">Every experiment shot, edited, and tested solo</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">Growing library</div>
+            <div class="label">New experiments added as they're finished</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiments" style="background:#EDEADD;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Log entries</div>
+        <h2>Experiments</h2>
+        <p>Browse by difficulty or field below. Each card shows the basics — click any experiment to open its full page with the video, deep-dive analysis, and safety information.</p>
+      </div>
+
+      <div class="filter-block">
+        <div class="filter-row">
+          <span class="filter-row-label">Difficulty</span>
+          <div class="filter-bar" id="difficultyBar" role="tablist" aria-label="Filter by difficulty">
+            <button class="filter-btn active" data-difficulty="all">All</button>
+            <button class="filter-btn" data-difficulty="beginner">Beginner</button>
+            <button class="filter-btn" data-difficulty="intermediate">Intermediate</button>
+            <button class="filter-btn" data-difficulty="advanced">Advanced</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-row-label">Branch</span>
+          <div class="filter-bar filter-bar-branch" id="disciplineBar" role="tablist" aria-label="Filter by field of science">
+            <button class="filter-btn branch-btn active" data-discipline="all">All fields</button>
+            <button class="filter-btn branch-btn" data-discipline="physics">⚡ Physics</button>
+            <button class="filter-btn branch-btn" data-discipline="chemistry">🧪 Chemistry</button>
+            <button class="filter-btn branch-btn" data-discipline="biology">🌱 Biology</button>
+            <button class="filter-btn branch-btn" data-discipline="engineering">⚙ Engineering</button>
+          </div>
+        </div>
+        <p class="filter-count" id="filterCount"></p>
+      </div>
+
+      <div class="log-grid" id="logGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No experiments in this branch yet — check back soon, or try a different filter.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Process</div>
+        <h2>How each experiment gets made</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="tag">01 — Build & test</div>
+          <h3>Prototype first</h3>
+          <p>Every experiment gets built and tested privately before it's ever filmed, so the version kids see actually works on the first try.</p>
+        </div>
+        <div class="step">
+          <div class="tag">02 — Film</div>
+          <h3>Shoot the walkthrough</h3>
+          <p>Recorded start to finish on a phone with a stabilized angle, clear narration, and close-up shots of anything small or detailed.</p>
+        </div>
+        <div class="step">
+          <div class="tag">03 — Publish</div>
+          <h3>Edit & release</h3>
+          <p>Edited for clarity and pacing, uploaded to YouTube, then added here with a written breakdown, materials list, and safety notes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>The Circuit Log</h4>
+        <p>A free, student-made library of hands-on science experiments — built, filmed, and explained for anyone curious enough to try.</p>
+      </div>
+      <div>
+        <h4>Watch</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">YouTube channel →</a></li>
+          <li><a href="#experiments">All experiments</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:youremail@example.com">youremail@example.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Circuit Log</span>
+      <span>Built by Ilan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/hub.js"></script>
+</body>
+</html>
